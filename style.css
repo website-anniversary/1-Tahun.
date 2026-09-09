@@ -5,7 +5,7 @@
 
 :root {
   /* Backgrounds */
-  --bg-1: #FFF7F9;
+  --bg-1: #ff83a2;
   --bg-2: #FFE8EE;
   --bg-3: #FDECEF;
 
@@ -274,7 +274,7 @@ main { position: relative; z-index: 2; }
 .section-title {
   font-family: var(--font-heading);
   font-weight: 600;
-  font-size: clamp(2rem, 5vw, 3.2rem);
+  font-size: clamp(1rem, 1vw, 2rem);
   color: var(--ink);
   margin-bottom: 20px;
   letter-spacing: 0.01em;
