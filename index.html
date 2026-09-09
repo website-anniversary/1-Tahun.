@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Happy Anniversary, Pacar Aku</title>
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Poppins:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ============================= -->
+<!-- LOADING SCREEN -->
+<!-- ============================= -->
+<div id="loading-screen">
+  <div class="loading-content">
+    <div class="loading-heart">
+      <svg viewBox="0 0 32 29" class="loading-heart-svg">
+        <path d="M16 29C16 29 0 19.5 0 8.9C0 3.98 4 0 8.7 0C11.7 0 14.2 1.5 16 3.9C17.8 1.5 20.3 0 23.3 0C28 0 32 3.98 32 8.9C32 19.5 16 29 16 29Z"/>
+      </svg>
+    </div>
+    <p class="loading-text">Tunggu Ya Sayang<span class="dots"><span>.</span><span>.</span><span>.</span></span></p>
+    <div class="loading-bar-track">
+      <div class="loading-bar-fill" id="loading-bar-fill"></div>
+    </div>
+    <p class="loading-percent" id="loading-percent">0%</p>
+  </div>
+</div>
+
+<!-- ============================= -->
+<!-- AMBIENT BACKGROUND LAYERS -->
+<!-- ============================= -->
+<div class="ambient-bg" aria-hidden="true">
+  <div class="gradient-orb orb-1"></div>
+  <div class="gradient-orb orb-2"></div>
+  <div class="gradient-orb orb-3"></div>
+</div>
+<div id="particle-field" aria-hidden="true"></div>
+
+<!-- ============================= -->
+<!-- SIDE NAVIGATION DOTS -->
+<!-- ============================= -->
+<nav class="nav-dots" id="nav-dots" aria-label="Section navigation">
+  <a href="#welcome" class="dot active" data-section="welcome"><span class="dot-label">Welcome</span></a>
+  <a href="#wishes" class="dot" data-section="wishes"><span class="dot-label">Wishes</span></a>
+  <a href="#memories" class="dot" data-section="memories"><span class="dot-label">Memories</span></a>
+  <a href="#whyilove" class="dot" data-section="whyilove"><span class="dot-label">Why I Love You</span></a>
+  <a href="#timeline" class="dot" data-section="timeline"><span class="dot-label">Our Story</span></a>
+  <a href="#gallery" class="dot" data-section="gallery"><span class="dot-label">Gallery</span></a>
+  <a href="#video" class="dot" data-section="video"><span class="dot-label">Video</span></a>
+  <a href="#letter" class="dot" data-section="letter"><span class="dot-label">Letter</span></a>
+  <a href="#surprise" class="dot" data-section="surprise"><span class="dot-label">Surprise</span></a>
+</nav>
+
+<!-- ============================= -->
+<!-- MUSIC CONTROLS -->
+<!-- ============================= -->
+<div class="music-player" id="music-player">
+  <button id="music-toggle" class="music-btn" aria-label="Play music">
+    <svg class="icon-play" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+    <svg class="icon-pause" viewBox="0 0 24 24" style="display:none"><path d="M6 5h4v14H6zM14 5h4v14h-4z"/></svg>
+  </button>
+  <div class="volume-wrap">
+    <input type="range" id="volume-slider" min="0" max="1" step="0.01" value="0.5" aria-label="Volume">
+  </div>
+</div>
+<audio id="bg-music" loop preload="none">
+  <source src="assets/music.mp3" type="audio/mpeg">
+</audio>
+
+<main id="main-content">
+
+  <!-- ============================= -->
+  <!-- HERO / WELCOME -->
+  <!-- ============================= -->
+  <section id="welcome" class="section hero-section">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <img src="assets/hero.jpg">
+      <p class="eyebrow reveal-up">Untuk Pacar Aku Yang Paling Cantik</p>
+      <h1 class="hero-title reveal-up delay-1">Happy Anniversary <br>Sayang <span class="heart-emoji">❤️</span></h1>
+      <p class="hero-subtitle reveal-up delay-2">10-09-2026</p>
+      <button id="start-journey" class="glow-button reveal-up delay-3">
+        <span>Lanjut</span>
+      </button>
+    </div>
+    <div class="scroll-hint">
+      <span></span>
+    </div>
+  </section>
+
+  <!-- ============================= -->
+  <!-- BIRTHDAY WISHES -->
+  <!-- ============================= -->
+  <section id="wishes" class="section wishes-section">
+    <div class="section-inner">
+      <p class="section-eyebrow">Harapan Aku Untuk Kamu</p>
+      <h2 class="section-title"> Anniversary </h2>
+      <div class="glass-panel wishes-panel">
+        <p id="typing-text" class="typing-text"></p>
+        <span class="typing-cursor" id="typing-cursor">|</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================= -->
+  <!-- OUR BEAUTIFUL MEMORIES -->
+  <!-- ============================= -->
+  <section id="memories" class="section memories-section">
+    <div class="section-inner">
+      <p class="section-eyebrow">Kata-Kata Alay</p>
+      <h2 class="section-title">Kenangan Indah</h2>
+      <p class="section-lede">Setiap kenangan bersamamu terasa seperti bagian kecil dari cerita yang begitu indah. Dari pertama kali kita bertemu hingga hari ini, setiap momen menjadi halaman berharga yang selalu ingin aku simpan.</p>
+      <div class="memories-grid">
+        <div class="memory-card fade-in-up">
+          <div class="memory-icon">✦</div>
+          <h3>Pertemuan Pertama</h3>
+          <p>Awal sederhana yang ternyata menjadi awal dari cerita yang begitu berarti.</p>
+        </div>
+        <div class="memory-card fade-in-up delay-1">
+          <div class="memory-icon">✦</div>
+          <h3>Percakapan Pertama</h3>
+          <p>Dari percakapan kecil, perlahan tumbuh rasa nyaman yang membuatku ingin mengenalmu lebih jauh.</p>
+        </div>
+        <div class="memory-card fade-in-up delay-2">
+          <div class="memory-icon">✦</div>
+          <h3>Momen Kita</h3>
+          <p>Tawa, candaan, dan hal-hal kecil yang mungkin terlihat sederhana, tapi selalu berhasil membuat hari-hariku lebih bahagia.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================= -->
+  <!-- WHY I LOVE YOU -->
+  <!-- ============================= -->
+  <section id="whyilove" class="section whyilove-section">
+    <div class="section-inner">
+      <p class="section-eyebrow">the reasons are endless</p>
+      <h2 class="section-title">Why I Love You</h2>
+      <div class="reasons-grid">
+        <div class="reason-card glass-panel fade-in-up">
+          <span class="reason-mark">01</span>
+          <p>Caramu membuat hari-hari biasa terasa begitu istimewa hingga setiap momen bersamamu selalu layak untuk dikenang.</p>
+        </div>
+        <div class="reason-card glass-panel fade-in-up delay-1">
+          <span class="reason-mark">02</span>
+          <p>Tawamu adalah salah satu hal sederhana yang selalu berhasil membuat suasana menjadi lebih hangat dan membuatku ikut bahagia.</p>
+        </div>
+        <div class="reason-card glass-panel fade-in-up delay-2">
+          <span class="reason-mark">03</span>
+          <p>Caramu menjaga perasaanku dengan begitu lembut membuatku merasa dihargai, dimengerti, dan disayangi.</p>
+        </div>
+        <div class="reason-card glass-panel fade-in-up delay-3">
+          <span class="reason-mark">04</span>
+          <p>Kamu selalu berhasil membuatku nyaman menjadi diriku sendiri tanpa harus berpura-pura menjadi orang lain.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================= -->
+  <!-- RELATIONSHIP TIMELINE -->
+  <!-- ============================= -->
+  <section id="timeline" class="section timeline-section">
+    <div class="section-inner">
+      <p class="section-eyebrow">cerita kita</p>
+      <h2 class="section-title">Waktu Awal Kenalan</h2>
+      <div class="timeline-wrap">
+        <div class="timeline-line"></div>
+        <div class="timeline-item left">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card glass-panel">
+            <span class="timeline-date">31 JULY 2025</span>
+            <h3>Pertemuan Pertama</h3>
+            <p>Semuanya berawal dari sebuah game. Dari dua orang yang awalnya asing, hingga akhirnya menjadi dua hati yang saling menemukan. ❤️</p>
+          </div>
+        </div>
+        <div class="timeline-item right">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card glass-panel">
+            <span class="timeline-date">Saat Kita Mulai Dekat</span>
+            <h3>Canggung & Malu-Malu</h3>
+            <p>Dari obrolan sederhana, tumbuh rasa nyaman yang membuat kita selalu ingin berbagi cerita.</p>
+          </div>
+        </div>
+        <div class="timeline-item left">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card glass-panel">
+            <span class="timeline-date">10 september 2025</span>
+            <h3>Dimana Kita Mengungkapkan perasaan</h3>
+            <p>Hari ketika hubungan ini dimulai menjadi salah satu bagian paling indah dalam perjalanan kita.</p>
+          </div>
+        </div>
+        <div class="timeline-item right">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card glass-panel">
+            <span class="timeline-date">Hari Ini</span>
+            <h3>Bersama Melewati Banyak Hal</h3>
+            <p>Tidak selalu sempurna, tetapi kita selalu belajar untuk saling memahami, menjaga, dan tetap bertahan bersama.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================= -->
+  <!-- GALLERY -->
+  <!-- ============================= -->
+  <section id="gallery" class="section gallery-section">
+    <div class="section-inner">
+      <p class="section-eyebrow">Gallery</p>
+      <h2 class="section-title">❤️</h2>
+      <div class="gallery-grid">
+
+    <button class="gallery-item" data-caption="Foto kita yang paling berkesan ❤️">
+        <img src="assets/foto1.jpg" alt="Foto1.jpg">
+    </button>
+
+    <button class="gallery-item" data-caption="Selalu bahagia bersamamu ❤️">
+        <img src="assets/foto2.jpg" alt="Foto 2">
+    </button>
+
+    <button class="gallery-item" data-caption="Terima kasih sudah hadir di hidupku ❤️">
+        <img src="assets/foto3.jpg" alt="Foto 3">
+    </button>
+
+    <button class="gallery-item" data-caption="Kenangan yang tak terlupakan ❤️">
+        <img src="assets/foto4.jpg" alt="Foto 4">
+    </button>
+
+    <button class="gallery-item" data-caption="Senyummu adalah bahagiaku ❤️">
+        <img src="assets/foto5.jpg" alt="Foto 5">
+    </button>
+
+    <button class="gallery-item" data-caption="I Love You Forever ❤️">
+        <img src="assets/foto6.jpg" alt="Foto 6">
+    </button>
+
+</div>
+    </div>
+  </section>
+
+  <!-- ============================= -->
+  <!-- VIDEO MEMORIES -->
+  <!-- ============================= -->
+  <section id="video" class="section video-section">
+    <div class="section-inner">
+      <p class="section-eyebrow">Story Your Pap</p>
+      <h2 class="section-title">Video Memories</h2>
+      <div class="video-frame glass-panel">
+          <video
+           id="memory-video"
+            controls
+           playsinline
+            preload="metadata">
+          <source src="assets/memory-video.mp4" type="video/mp4">
+          Browser kamu tidak mendukung video.
+          </video>
+        <div class="video-placeholder" id="video-placeholder">
+          <div class="video-placeholder-icon">▶</div>
+          <p>Add your video at <code>assets/memory-video.mp4</code></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================= -->
+  <!-- LOVE LETTER -->
+  <!-- ============================= -->
+  <section id="letter" class="section letter-section">
+    <div class="section-inner">
+      <p class="section-eyebrow">Ucapan Dari Pacar Kamu</p>
+      <h2 class="section-title">Diary For you</h2>
+      <div class="letter-card glass-panel">
+        <p class="letter-body">
+          365 hari.<br><br>
+          satu tahun penuh cerita, tawa, air mata, pelukan, diam-diam saling ngerti, dan saling bertahan.gak nyangka ya kita bisa sampai sejauh ini. awalnya cuma kenal biasa, lama-lama jadi tempat pulang. jadi orang yang paling ngerti, jadi satu-satunya yang bisa nenangin tanpa banyak kata.
+          selama setahun ini, kamu udah banyak banget ngasih aku hal yang mungkin gak bisa aku balas satu per satu. kesabaran kamu, ketulusan kamu, perjuangan kamu buat terus ada semua itu gak pernah aku anggap sepele. aku tahu kita gak sempurna. kadang salah paham, kadang saling bikin kecewa. tapi hebatnya, kita gak pernah bener-bener ninggalin.<br><br>
+          selalu ada yang mau memperbaiki. selalu ada yang mau bertahan. aku bersyukur banget, dari semua orang yang bisa datang dan pergi, semesta milih kamu buat jadi temen aku jatuh cinta setiap hari dan aku harap, setiap hari ke depan pun, tetap kamu. 
+          terima kasih ya, udah bareng aku sampai di titik satu tahun ini. <br><br>
+          semoga tahun-tahun selanjutnya bisa kita lewatin bareng, saling jaga, saling kuat, dan saling cinta.<br><br>
+          aku sayang kamu.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================= -->
+  <!-- FINAL SURPRISE -->
+  <!-- ============================= -->
+  <section id="surprise" class="section surprise-section">
+    <canvas id="celebration-canvas"></canvas>
+    <div class="section-inner surprise-inner">
+      <p class="section-eyebrow">UNTUK &amp; SELAMANYA</p>
+      <h2 class="surprise-title">I Love You Sayang <span class="heart-emoji">❤️</span></h2>
+      <p class="surprise-sub">Happy Anniversary sayang aku. Makasih Udah Mau Bertahan Sam-Sama.</p>
+      <button id="replay-btn" class="glow-button outline">
+        <span>Kembali Lagi</span>
+      </button>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============================= -->
+<!-- LIGHTBOX -->
+<!-- ============================= -->
+<div class="lightbox" id="lightbox" aria-hidden="true">
+  <button class="lightbox-close" id="lightbox-close" aria-label="Close">&times;</button>
+  <div class="lightbox-content">
+    <div class="lightbox-frame" id="lightbox-frame"></div>
+    <p class="lightbox-caption" id="lightbox-caption"></p>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
